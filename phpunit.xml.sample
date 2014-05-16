@@ -1,5 +1,7 @@
 <phpunit
-        printerClass="iakio\phpunit\GrowlPrinter">
+        printerClass="iakio\phpunit\GrowlPrinter"
+        printerFile="src\iakio\phpunit\GrowlPrinter.php"
+>
 
     <testsuite name="Test Suite">
         <directory>tests</directory>

@@ -31,7 +31,16 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 
     protected function createGrowl()
     {
-        $growl = new Growl("phpunit");
+        return new Growl("phpunit");
+    }
+
+    protected function sendNotify($buffer, $type)
+    {
+        $growl = $this->createGrowl();
+        $notification = new Type($type);
+        $growl->addNotificationType($notification);
+        $message = $notification->create($type, $buffer);
+        $growl->sendNotify($message);
     }
 
     public function printResult(\PHPUnit_Framework_TestResult $result)
@@ -49,10 +58,6 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
         } else {
             $type = "WARN";
         }
-        $growl = $this->createGrowl();
-        $notification = new Type($type);
-        $growl->addNotificationType($notification);
-        $message = $notification->create($type, $this->buffer);
-        $growl->sendNotify($message);
+        $this->sendNotify($this->buffer, $type);
     }
 } 
