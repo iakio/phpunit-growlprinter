@@ -1,8 +1,7 @@
 <?php
 namespace iakio\phpunit;
 
-use Madalynn\Growl\Growl;
-use Madalynn\Growl\Notification\Type;
+use iakio\GntpNotify\GNTP;
 
 class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 {
@@ -31,16 +30,14 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 
     protected function createGrowl()
     {
-        return new Growl("phpunit");
+        return new GNTP("phpunit");
     }
 
-    protected function sendNotify($buffer, $type)
+    protected function sendNotify($buffer, $type, $icon)
     {
         $growl = $this->createGrowl();
-        $notification = new Type($type);
-        $growl->addNotificationType($notification);
-        $message = $notification->create($type, $buffer);
-        $growl->sendNotify($message);
+        $growl->sendNotify($type, $type, $buffer,
+            array('icon_file' => __DIR__ . '/../../../resources/' . $icon));
     }
 
     public function printResult(\PHPUnit_Framework_TestResult $result)
@@ -53,11 +50,14 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 
         if (strstr($this->color, 'red')) {
             $type = "FAIL";
+            $icon = "red.png";
         } elseif (strstr($this->color, 'green')) {
             $type = "SUCCESS";
+            $icon = "green.png";
         } else {
             $type = "WARN";
+            $icon = "yellow.png";
         }
-        $this->sendNotify($this->buffer, $type);
+        $this->sendNotify($this->buffer, $type, $icon);
     }
 } 
