@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a86f61844d654b22a613b31044d223b",
+    "hash": "fb27dfc25c9101761381cd0aaa1f644d",
     "packages": [
         {
             "name": "iakio/gntp-notify",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iakio/gntp-notify.git",
-                "reference": "a221d9642852a89deb22d092e87bdfb347acf279"
+                "reference": "2366f73a67081648da90714fe3f674759677e5cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iakio/gntp-notify/zipball/a221d9642852a89deb22d092e87bdfb347acf279",
-                "reference": "a221d9642852a89deb22d092e87bdfb347acf279",
+                "url": "https://api.github.com/repos/iakio/gntp-notify/zipball/2366f73a67081648da90714fe3f674759677e5cc",
+                "reference": "2366f73a67081648da90714fe3f674759677e5cc",
                 "shasum": ""
             },
             "type": "library",
@@ -42,7 +42,7 @@
                 "growl",
                 "notification"
             ],
-            "time": "2014-07-26 12:21:38"
+            "time": "2014-07-27 08:32:30"
         },
         {
             "name": "phpunit/php-code-coverage",

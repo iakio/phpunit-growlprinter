@@ -10,7 +10,7 @@ class GrowlPrinterTest extends \PHPUnit_Framework_TestCase {
             ->getMock();
         $printer->expects($this->once())
             ->method("sendNotify")
-            ->with("No tests executed!", "WARN");
+            ->with("No tests executed!", "YELLOW");
         $printer->printResult($result);
     }
 }

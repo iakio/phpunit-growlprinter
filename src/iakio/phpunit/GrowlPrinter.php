@@ -2,6 +2,9 @@
 namespace iakio\phpunit;
 
 use iakio\GntpNotify\GNTP;
+use iakio\GntpNotify\IO;
+use iakio\GntpNotify\NotificationRequest;
+use iakio\GntpNotify\RegisterRequest;
 
 class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 {
@@ -30,14 +33,18 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 
     protected function createGrowl()
     {
-        return new GNTP("phpunit");
+        return new GNTP(new IO("localhost", 23053, false));
     }
 
-    protected function sendNotify($buffer, $type, $icon)
+    protected function sendNotify($buffer, $type)
     {
         $growl = $this->createGrowl();
-        $growl->sendNotify($type, $type, $buffer,
-            array('icon_file' => __DIR__ . '/../../../resources/' . $icon));
+        $register = new RegisterRequest("phpunit");
+        $register->addNotification("GREEN",  array('icon_file' => __DIR__ . '/../../../resources/green.png'));
+        $register->addNotification("RED",    array('icon_file' => __DIR__ . '/../../../resources/red.png'));
+        $register->addNotification("YELLOW", array('icon_file' => __DIR__ . '/../../../resources/yellow.png'));
+        $notify = new NotificationRequest("phpunit", $type, "phpunit", array("text" => $buffer));
+        $growl->notifyOrRegister($notify, $register);
     }
 
     public function printResult(\PHPUnit_Framework_TestResult $result)
@@ -49,15 +56,12 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
         $this->capture = false;
 
         if (strstr($this->color, 'red')) {
-            $type = "FAIL";
-            $icon = "red.png";
+            $type = "RED";
         } elseif (strstr($this->color, 'green')) {
-            $type = "SUCCESS";
-            $icon = "green.png";
+            $type = "GREEN";
         } else {
-            $type = "WARN";
-            $icon = "yellow.png";
+            $type = "YELLOW";
         }
-        $this->sendNotify($this->buffer, $type, $icon);
+        $this->sendNotify($this->buffer, $type);
     }
 } 
