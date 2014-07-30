@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb27dfc25c9101761381cd0aaa1f644d",
+    "hash": "f0f5f49db20223799f6becc2380fc285",
     "packages": [
         {
             "name": "iakio/gntp-notify",
@@ -43,7 +43,9 @@
                 "notification"
             ],
             "time": "2014-07-27 08:32:30"
-        },
+        }
+    ],
+    "packages-dev": [
         {
             "name": "phpunit/php-code-coverage",
             "version": "2.0.9",
@@ -739,9 +741,6 @@
             "homepage": "http://symfony.com",
             "time": "2014-07-09 09:05:48"
         }
-    ],
-    "packages-dev": [
-
     ],
     "aliases": [
 
