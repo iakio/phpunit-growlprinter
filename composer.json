@@ -1,6 +1,7 @@
 {
     "name": "iakio/phpunit-growlprinter",
     "description": "PHPUnit Growl(GNTP) Printer",
+    "keywords": ["phpunit", "growl", "gntp", "notification"],
     "authors": [
         {
             "name": "ISHIDA Akio",
