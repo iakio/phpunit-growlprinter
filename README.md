@@ -15,7 +15,7 @@ Specify a printerClass in your phpunit.xml,
 
 ```
 <phpunit printerClass="iakio\phpunit\GrowlPrinter"
-         printerFile="src\iakio\phpunit\GrowlPrinter.php">
+         printerFile="vendor/iakio/phpunit-growlprinter/src/iakio/phpunit/GrowlPrinter.php">
 ...
 </phpunit>
 ```
