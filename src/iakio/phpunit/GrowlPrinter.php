@@ -1,6 +1,5 @@
 <?php
 namespace iakio\phpunit;
-
 use iakio\GntpNotify\GNTP;
 use iakio\GntpNotify\IO;
 use iakio\GntpNotify\NotificationRequest;
@@ -49,8 +48,10 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
 
     public function printResult(\PHPUnit_Framework_TestResult $result)
     {
+        // Standard output
         parent::printResult($result);
 
+        // Capture footer and send to Growl.
         $this->capture = true;
         parent::printFooter($result);
         $this->capture = false;
@@ -64,4 +65,4 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
         }
         $this->sendNotify($this->buffer, $type);
     }
-} 
+}
