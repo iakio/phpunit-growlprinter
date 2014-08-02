@@ -9,9 +9,10 @@ class GrowlPrinterTest extends \PHPUnit_Framework_TestCase
         $printer = $this->getMockBuilder("iakio\\phpunit\\GrowlPrinter")
             ->setMethods(array("sendNotify"))
             ->getMock();
+        // phpunit 3.7 returns 'No tests executed!\n'.
         $printer->expects($this->once())
             ->method("sendNotify")
-            ->with("No tests executed!", "YELLOW");
+            ->with($this->stringStartsWith("No tests executed!"), "YELLOW");
         $printer->printResult($result);
     }
 }
