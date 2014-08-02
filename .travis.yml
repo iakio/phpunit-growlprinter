@@ -1,10 +1,23 @@
 language: php
 
 before_script:
-  - composer install --dev --prefer-source
+  - composer self-update
+  - composer install --prefer-source --no-dev
+
+script:
+  - composer require --prefer-source phpunit/phpunit:${PHPUNIT_VERSION}
+  - vendor/bin/phpunit
+
+env:
+  - PHPUNIT_VERSION=4.1.*
 
 php:
   - 5.5
   - 5.4
   - 5.3
   - hhvm
+
+matrix:
+  include:
+    - php: 5.5
+      env: PHPUNIT_VERSION=3.7.*
