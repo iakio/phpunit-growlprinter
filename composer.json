@@ -18,6 +18,6 @@
         "iakio/gntp-notify": "~0.2"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=3.7,<4.3"
+        "phpunit/phpunit": ">=3.7,<4.6"
     }
 }
