@@ -20,13 +20,13 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
         }
     }
 
-    protected function writeWithColor($color, $buffer)
+    protected function writeWithColor($color, $buffer, $lf = true)
     {
         if ($this->capture) {
             $this->color = $color;
             $this->buffer .= $buffer;
         } else {
-            parent::writeWithColor($color, $buffer);
+            parent::writeWithColor($color, $buffer, $lf);
         }
     }
 
