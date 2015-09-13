@@ -9,15 +9,36 @@ phpunit-growlprinter
 - PHP >= 5.3
 - phpunit >= 4.6.\*,<5.0
 
-## Installation
+## Usage
+
+### PHAR
+
+1. Download phpunit-growlprinter.phar from [here](https://github.com/iakio/phpunit-growlprinter/releases).
+
+2. Create new bootstrap file.
+
+```
+<?php
+// bootstrap_growl.php
+require_once "phpunit-growlprinter.phar";
+// Put your own bootstrap file here
+// require_once "bootstrap.php";
+```
+
+3. Run
+
+```
+$ phpunit --bootstrap=bootstrap_growl.php --printer=iakio\\phpunit\\GrowlPrinter
+```
+
+
+### Composer
 
 ```
 php composer.phar require --dev iakio/phpunit-growlprinter:*
 ```
 
-## Usage
-
-Specify a printerClass in your phpunit.xml,
+Specify printerClass in your phpunit.xml,
 
 ```
 <phpunit printerClass="iakio\phpunit\GrowlPrinter"
@@ -65,4 +86,3 @@ class MyGrowlPrinter extends GrowlPrinter
 ...
 </phpunit>
 ```
-

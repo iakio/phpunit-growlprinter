@@ -1,0 +1,21 @@
+{
+    "alias": "phpunit-growlprinter.phar",
+    "finder": [
+        {
+            "name": ["LICENSE.md", "*.php"],
+            "exclude": [
+                "tests"
+            ],
+            "in": [
+                "vendor/iakio/gntp-notify"
+            ]
+        }
+    ],
+    "directories": [ "src/" ],
+    "directories-bin": [ "resources/" ],
+    "files": [
+        "LICENSE"
+    ],
+    "output": "phpunit-growlprinter-@git-version@.phar",
+    "stub": "stub.php"
+}
