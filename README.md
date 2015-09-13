@@ -17,41 +17,42 @@ phpunit-growlprinter
 
 2. Create new bootstrap file.
 
-```
-<?php
-// bootstrap_growl.php
-require_once "phpunit-growlprinter.phar";
-// Put your own bootstrap file here
-// require_once "bootstrap.php";
-```
+  ```
+  <?php
+  // bootstrap_growl.php
+  require_once "phpunit-growlprinter.phar";
+  // Put your own bootstrap file here
+  // require_once "bootstrap.php";
+  ```
 
 3. Run
 
-```
-$ phpunit --bootstrap=bootstrap_growl.php --printer=iakio\\phpunit\\GrowlPrinter
-```
+  ```
+  $ phpunit --bootstrap=bootstrap_growl.php --printer=iakio\\phpunit\\GrowlPrinter
+  ```
 
 
 ### Composer
 
-```
-php composer.phar require --dev iakio/phpunit-growlprinter:*
-```
+1. Install
+  ```
+  php composer.phar require --dev iakio/phpunit-growlprinter:*
+  ```
 
-Specify printerClass in your phpunit.xml,
+2. Specify printerClass in your phpunit.xml,
 
-```
-<phpunit printerClass="iakio\phpunit\GrowlPrinter"
-         printerFile="vendor/iakio/phpunit-growlprinter/src/iakio/phpunit/GrowlPrinter.php">
-...
-</phpunit>
-```
+  ```
+  <phpunit printerClass="iakio\phpunit\GrowlPrinter"
+           printerFile="vendor/iakio/phpunit-growlprinter/src/iakio/phpunit/GrowlPrinter.php">
+  ...
+  </phpunit>
+  ```
 
-or commandline.
+  or commandline.
 
-```
-$ phpunit --printer=iakio\\phpunit\\GrowlPrinter
-```
+  ```
+  $ phpunit --printer=iakio\\phpunit\\GrowlPrinter
+  ```
 
 ## Tips
 
