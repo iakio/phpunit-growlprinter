@@ -7,7 +7,7 @@ phpunit-growlprinter
 ## Requirements
 
 - PHP >= 5.3
-- phpunit >= 4.6.\*,<5.0
+- phpunit >= 4.6.\*,<5.1
 
 ## Usage
 
