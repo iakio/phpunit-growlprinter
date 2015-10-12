@@ -7,6 +7,7 @@ require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/Gnt
 require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/GNTPRequest.php";
 require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/GNTPResponse.php";
 require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/IO.php";
+require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/IOException.php";
 require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/NotificationRequest.php";
 require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/RegisterRequest.php";
 require "phar://phpunit-growlprinter.phar/vendor/iakio/gntp-notify/src/iakio/GntpNotify/Resource.php";
