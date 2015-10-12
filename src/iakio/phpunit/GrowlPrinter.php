@@ -63,6 +63,10 @@ class GrowlPrinter extends \PHPUnit_TextUI_ResultPrinter
         } else {
             $type = "YELLOW";
         }
-        $this->sendNotify($this->buffer, $type);
+        try {
+            $this->sendNotify($this->buffer, $type);
+        } catch (\Exception $e) {
+            $this->write("[growlprinter] Could not send notification.\n" . $e->getMessage());
+        }
     }
 }
