@@ -16,7 +16,7 @@ script:
   - vendor/bin/phpunit
 
 env:
-  - PHPUNIT_VERSION=5.0.*
+  - PHPUNIT_VERSION=4.7.*
 
 php:
   - 5.6
