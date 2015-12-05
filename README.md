@@ -7,7 +7,7 @@ phpunit-growlprinter
 ## Requirements
 
 - PHP >= 5.3
-- phpunit >= 4.6.\*,<5.1
+- phpunit >= 4.6.\*,<5.2
 
 ## Usage
 
@@ -17,7 +17,7 @@ phpunit-growlprinter
 
 2. Create new bootstrap file.
 
-  ```
+  ```php
   <?php
   // bootstrap_growl.php
   require_once "phpunit-growlprinter.phar";
@@ -27,7 +27,7 @@ phpunit-growlprinter
 
 3. Run
 
-  ```
+  ```sh
   $ phpunit --bootstrap=bootstrap_growl.php --printer=iakio\\phpunit\\GrowlPrinter
   ```
 
@@ -35,13 +35,13 @@ phpunit-growlprinter
 ### Composer
 
 1. Install
-  ```
-  php composer.phar require --dev iakio/phpunit-growlprinter:*
+  ```sh
+  $ php composer.phar require --dev iakio/phpunit-growlprinter:*
   ```
 
 2. Specify printerClass in your phpunit.xml,
 
-  ```
+  ```xml
   <phpunit printerClass="iakio\phpunit\GrowlPrinter"
            printerFile="vendor/iakio/phpunit-growlprinter/src/iakio/phpunit/GrowlPrinter.php">
   ...
@@ -50,7 +50,7 @@ phpunit-growlprinter
 
   or commandline.
 
-  ```
+  ```sh
   $ phpunit --printer=iakio\\phpunit\\GrowlPrinter
   ```
 
@@ -58,13 +58,13 @@ phpunit-growlprinter
 
 If you want to use remote PHPUnit with local Growl, Use portforwarding:
 
-```
+```sh
 $ ssh -R:23053:localhost:23053 myremotehost
 ```
 
 or, override `GrowlPrinter` class.
 
-```
+```php
 <?php
 // src/MyGrowlPrinter.php
 namespace app;
@@ -81,7 +81,7 @@ class MyGrowlPrinter extends GrowlPrinter
 }
 ```
 
-```
+```xml
 <phpunit printerClass="app\MyGrowlPrinter"
          printerFile="src/MyGrowlPrinter.php">
 ...
