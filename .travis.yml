@@ -16,7 +16,7 @@ script:
   - vendor/bin/phpunit
 
 env:
-  - PHPUNIT_VERSION=4.7.*
+  - PHPUNIT_VERSION=4.8.*
 
 php:
   - 7.0
@@ -29,8 +29,6 @@ php:
 matrix:
   include:
     - php: 7.0
-      env: PHPUNIT_VERSION=4.6.*
+      env: PHPUNIT_VERSION=4.8.*
     - php: 7.0
-      env: PHPUNIT_VERSION=4.7.*
-    - php: 7.0
-      env: PHPUNIT_VERSION=5.1.*
+      env: PHPUNIT_VERSION=5.4.*
